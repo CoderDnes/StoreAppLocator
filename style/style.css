@@ -23,3 +23,40 @@ body {
     top: 100px;
     left: 100px;
 }
+
+.search-container {
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    background-color: #454545;
+    z-index: 100;
+    top: 235px;
+    left: 100px;
+    border-radius: 30px;
+    display: flex;
+}
+
+.search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.search-container input {
+    flex-grow: 1;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search i {
+    font-size: 25px;
+    color: white;
+}
