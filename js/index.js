@@ -15,7 +15,36 @@ function initMap() {
         zoom: 11,
     });
     infoWindow = new google.maps.InfoWindow();
+    displayStores();
     ShowStoreMarkers();
+}
+
+
+function displayStores() {
+    var storesHtml = '';
+    stores.forEach(function(store, index) {
+        var address = store.addressLines;
+        var phone = store.phoneNumber;
+        storesHtml += `
+              <div class="store-container">
+                <div class="store-container-background">
+                    <div class="store-info-container">
+                        <div class="store-address">
+                            <span>${address[0]}</span>
+                            <span>${address[1]}</span>
+                        </div>
+                        <div class="store-phone-number">${phone}</div>
+                    </div>
+                    <div class="store-number-container">
+                        <div class="store-number">${index + 1}</div>
+                    </div>
+                </div>
+
+            </div>
+            `
+    });
+
+    document.querySelector('.stores-list').innerHTML = storesHtml
 }
 
 function ShowStoreMarkers() {
@@ -28,10 +57,13 @@ function ShowStoreMarkers() {
         var name = store.name
         var address = store.addressLines[0];
         createMarker(latlng, name, address, index);
+
         bounds.extend(latlng);
     })
     map.fitBounds(bounds);
 }
+
+
 
 
 function createMarker(latlng, name, address, index) {
