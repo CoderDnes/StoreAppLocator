@@ -15,9 +15,8 @@ function initMap() {
         zoom: 11,
     });
     infoWindow = new google.maps.InfoWindow();
-    // displayStores();
-    // setOnClickListener();
-    ShowStoreMarkers();
+    searchStores();
+
 }
 
 function searchStores() {
@@ -34,7 +33,13 @@ function searchStores() {
             }
         })
     }
+    // zip code not found
+    else {
+        foundStores = stores;
+    }
+
     console.log(foundStores);
+    clearLocations();
     displayStores(foundStores);
     ShowStoreMarkers(foundStores);
     setOnClickListener()
@@ -45,9 +50,7 @@ function clearLocations() {
     for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
     }
-    markers.length = 0;
-
-
+    markers.length = 0; // clear out markers
 }
 
 
