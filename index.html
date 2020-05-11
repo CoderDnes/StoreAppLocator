@@ -10,30 +10,19 @@
 
 <body>
     <div id="map"></div>
+    <div class="title">Store Locator</div>
 
 
 
 
 
-    <script>
-        //  function get initalized
 
-        function initMap() {
-            var sydney = {
-                lat: -33.863276,
-                lng: 151.107977
-            };
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: sydney,
-                zoom: 11,
-            });
-        }
-    </script>
 
     <!-- enforces your googlemap Api
         callback init map function
     -->
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/store-data.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBft12szPkPIjGwg8ct_-i-NgijQxsP_0Y&callback=initMap">
     </script>
 
