@@ -111,12 +111,13 @@ body {
     flex-grow: 1;
 }
 
-.store-info-co ntainer {
+.store-info-container {
     flex-grow: 1;
 }
 
 .store-container {
     border-bottom: 1px solid #979797;
+    cursor: pointer;
 }
 
 .store-number-container {

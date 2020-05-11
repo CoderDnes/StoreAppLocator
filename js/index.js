@@ -16,9 +16,19 @@ function initMap() {
     });
     infoWindow = new google.maps.InfoWindow();
     displayStores();
+    setOnClickListener();
     ShowStoreMarkers();
 }
 
+function setOnClickListener() {
+    var storeElements = document.querySelectorAll('.store-container')
+    storeElements.forEach(function(elem, index) {
+        elem.addEventListener('click', function() {
+            new google.maps.event.trigger(markers[index], 'click');
+        })
+    })
+    console.log(storeElements);
+}
 
 function displayStores() {
     var storesHtml = '';
