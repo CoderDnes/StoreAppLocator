@@ -60,3 +60,14 @@ body {
     font-size: 25px;
     color: white;
 }
+
+.store-list-container {
+    position: absolute;
+    background-color: azure;
+    width: 485px;
+    z-index: 100;
+    top: 320px;
+    left: 100px;
+    border-radius: 30px;
+    bottom: 20px;
+}
