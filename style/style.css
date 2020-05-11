@@ -61,13 +61,13 @@ body {
     color: white;
 }
 
-.store-list-container {
+.store-list-conatiner {
     position: absolute;
-    background-color: azure;
-    width: 485px;
+    background: white;
+    width: 400px;
     z-index: 100;
     top: 320px;
     left: 100px;
-    border-radius: 30px;
+    border-radius: 20px;
     bottom: 20px;
 }
