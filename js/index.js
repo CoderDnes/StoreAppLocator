@@ -1,5 +1,5 @@
-var map;
-var markers = [];
+let map;
+let markers = [];
 var infoWindow;
 var locationSelect;
 
@@ -18,18 +18,28 @@ function initMap() {
 }
 
 function ShowStoreMarkers() {
-    stores.forEach(function(stores, index) {
+    stores.forEach(function(store, index) {
         var latlng = new google.maps.LatLng(
-            stores.coordinates.latitude,
-            stores.coordinates.longitude
+            store.coordinates.latitude,
+            store.coordinates.longitude
         );
-        var name = stores.name
-        var Address = stores.addressLines[0];
-        createmarker(latlng, name, Address);
+        var name = store.name
+        var address = store.addressLines[0];
+        createMarker(latlng, name, address);
     })
 }
 
-function createmarker(latlng, name, Address) {
 
+function createMarker(latlng, name, address) {
+    var html = "<b>" + name + "</b> <br/>" + address;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: latlng
+    });
+    //   google.maps.event.addListener(marker, 'click', function() {
+    //     infoWindow.setContent(html);
+    //     infoWindow.open(map, marker);
+    //   });
+    markers.push(marker);
 
 }
